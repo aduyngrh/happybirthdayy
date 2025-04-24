@@ -1,0 +1,480 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+    color: 333;
+    text-align: center;
+    scroll-behavior: smooth;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+p {
+    font-size: 1.7rem;
+    color: white;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-family: "Inconsolata", serif;
+}
+
+.balloons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -150px;
+    width: 50px;
+    height: 70px;
+    border-radius: 50%;
+    animation: float 5s ease-in infinite;
+}
+
+.balloon:before {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    width: 2px;
+    height: 50px;
+    background-color: #fff;
+    transform: translateX(-50%);
+}
+
+.balloon:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+    background-color: blue;
+}
+
+.balloon:nth-child(2) {
+    left: 20%;
+    animation-delay: 1s;
+    background-color: #f88c8c;
+}
+
+.balloon:nth-child(3) {
+    left: 30%;
+    animation-delay: 2s;
+    background-color: yellow;
+}
+
+.balloon:nth-child(4) {
+    left: 40%;
+    animation-delay: 3s;
+    background-color: greenyellow;
+}
+
+.balloon:nth-child(5) {
+    left: 50%;
+    animation-delay: 4s;
+    background-color: white;
+}
+
+.balloon:nth-child(6) {
+    left: 60%;
+    animation-delay: 2s;
+    background-color: red;
+}
+
+.balloon:nth-child(7) {
+    left: 70%;
+    animation-delay: 1.5s;
+    background-color: cyan;
+}
+
+.balloon:nth-child(8) {
+    left: 80%;
+    animation-delay: 2.5s;
+    background-color: chartreuse;
+}
+
+.balloon:nth-child(9) {
+    left: 90%;
+    animation-delay: 3.5s;
+    background-color: #ff6f6f;
+}
+
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-300px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+i {
+    cursor: pointer;
+    color: black;
+    font-size: 25px;
+    display: inline-block;
+    font-size: 24px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+i:hover {
+    transform: translateX(5px);
+    color: grey;
+}
+
+
+/* css page kedua */
+
+.book-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: white;
+    position: relative;
+    z-index: 1;
+}
+
+.balloon-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* Gaya dasar balon */
+.animated-balloon {
+    position: absolute;
+    bottom: -150px;
+    width: 50px;
+    height: 70px;
+    border-radius: 50%;
+    animation: float-up 3s ease-out forwards;
+}
+
+/* Efek tali balon */
+.animated-balloon::after {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    width: 2px;
+    height: 50px;
+    background-color: wheat;
+    transform: translateX(-50%);
+}
+
+/* Animasi balon naik */
+@keyframes float-up {
+    0% {
+        bottom: -50px;
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 50%;
+        opacity: 1;
+    }
+}
+
+/* Efek ledakan */
+.explode {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    opacity: 0;
+    position: absolute;
+    animation: explode-animation 0.5s ease-out forwards;
+}
+
+@keyframes explode-animation {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+
+.border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 100px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.book {
+    width: 700px;
+    height: 600px;
+    position: relative;
+    perspective: 1500px;
+}
+
+.pages {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: white;
+    box-shadow: 0 5px 5px 5px rgba(161, 152, 158, 0.2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    backface-visibility: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.page img {
+    width: 80%;
+    height: 70%;
+    border-radius: 5px;
+}
+
+.page video {
+    width: 80%;
+    height: 70%;
+    border-radius: 5px;
+}
+
+.page p {
+    max-width: 80%;
+    font-size: 20px;
+    color: grey;
+    margin-top: 10px;
+    word-wrap: break-word;
+    text-align: justify;
+    font-family: "Inconsolata", serif;
+}
+
+.book .pages .page {
+    transform-origin: left;
+    transition: transform 2s;
+}
+
+.book.flipped .pages .page:nth-child(odd) {
+    transform: rotateY(-180deg);
+}
+
+.book.flipped .pages .page:nth-child(even) {
+    transform: rotateY(0deg);
+}
+
+.flip-button {
+    position: absolute;
+    top: 50%;
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev {
+    left: -60px;
+}
+
+.next {
+    right: -60px;
+}
+
+
+
+/* === RESPONSIVE DESIGN UNTUK .book DAN ISINYA === */
+@media (max-width: 1200px) {
+    .book {
+        width: 90%;
+        height: 550px;
+    }
+
+    .page img,
+    .page video {
+        width: 90%;
+        height: auto;
+        max-height: 300px;
+    }
+
+    .page p {
+        font-size: 18px;
+    }
+
+    .flip-button {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .book {
+        width: 90%;
+        height: 500px;
+    }
+
+    .page img,
+    .page video {
+        max-height: 250px;
+    }
+
+    .page p {
+        font-size: 16px;
+        max-width: 90%;
+    }
+
+    .flip-button {
+        padding: 8px;
+    }
+
+    .prev {
+        left: -40px;
+    }
+
+    .next {
+        right: -40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .book {
+        width: 100%;
+        height: auto;
+    }
+
+    .page {
+        position: relative;
+        min-height: 450px;
+        padding: 15px;
+    }
+
+    .page img,
+    .page video {
+        width: 100%;
+        max-height: 220px;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .page p {
+        font-size: 15px;
+        max-width: 100%;
+    }
+
+    .flip-button {
+        position: relative;
+        top: auto;
+        bottom: -20px;
+        margin: 0 10px;
+        font-size: 18px;
+    }
+
+    .prev,
+    .next {
+        position: relative;
+        left: auto;
+        right: auto;
+        display: inline-block;
+    }
+
+    .book-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .border {
+        font-size: 50px;
+    }
+
+    .balloon,
+    .animated-balloon {
+        width: 30px;
+        height: 45px;
+    }
+
+    .balloon:before,
+    .animated-balloon::after {
+        height: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .book {
+        width: 100%;
+        height: auto;
+    }
+
+    .page {
+        min-height: 400px;
+        padding: 10px;
+    }
+
+    .page img,
+    .page video {
+        max-height: 180px;
+    }
+
+    .page p {
+        font-size: 14px;
+    }
+
+    .flip-button {
+        font-size: 16px;
+    }
+
+    .border {
+        font-size: 36px;
+    }
+
+    .balloon,
+    .animated-balloon {
+        width: 25px;
+        height: 40px;
+    }
+
+    .balloon:before,
+    .animated-balloon::after {
+        height: 20px;
+    }
+}

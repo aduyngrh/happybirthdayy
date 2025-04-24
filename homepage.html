@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPPY BIRTHDAY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/x-icon" href="/assets/aray.jpg">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Happy Birthday, Tiara Aliciano</h1>
+        <p id="typing"></p>
+    </div>
+    <div class="balloons">
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+    </div>
+    <div class="book-container">
+        <div class="balloon-container"></div>
+        <div class="book" id="book">
+            <div class="pages">
+                <div class="page" style="z-index: 6;">
+                    <div class="border">BOOK HISTORY CERITANYA</div>
+                </div>
+                <div class="page border" style="z-index: 5;">
+                    <img src="/assets/cupray.jpg" alt="Image 1">
+                    <p>Ini cupray bersejarah namun kabar terakhir yang saya dengar ini
+                        sudah di kebumikan, Dan yapp... apakah cupray yang tersisa masih hidup saya sangat penasaran
+                    </p>
+                </div>
+                <div class="page" style="z-index: 4;">
+                    <img src="/assets/glowfish.jpg" alt="Image 2">
+                    <p>nah kalo ini kayanya kalo ga salah di beli bersamaan dengan cupray bersejarah
+                        Dan yapp... nasibnya sama seperti tragedi sebelumnya dan parahnya semua nasibnya sama😁
+                    </p>
+                </div>
+                <div class="page" style="z-index: 3;">
+                    <img src="/assets/otatray.jpg" alt="Image 2">
+                    <p>info yang saya dapat untuk membuat tato tersebut sangat mahal karna bergambar jarjit
+                        yang dimana dalam kartun upin dan ipin jarjit memiliki peran agak asik yang dimana dia sering
+                        pantun
+                        seperti ada ranting ada kayu...
+                    </p>
+                </div>
+                <div class="page" style="z-index: 2;">
+                    <video width="350" height="320" controls>
+                        <source src="/assets/worii.mp4" type="video/mp4">
+                    </video>
+                    <p>pasti lu tau kan ini siapa hehehe, ubur ubur ikan lele rindu voice worii lee,
+                        itu pasti sebelum/sesudah ngeriview gambar kanjeng ndoroyy worii.
+                    </p>
+                </div>
+                <div class="page" style="z-index: 1;">
+                    <video width="350" height="320" controls>
+                        <source src="/assets/cuprat.v2.mp4" type="video/mp4">
+                    </video>
+                    <p>setelah menyelam beberapa file ternyata ini yang di beli barengan sama glofish itu,
+                        apa cupray yang di taro di tempat warna pink itu aslinya sama dengan cupang yang di beli
+                        bersamaan dengan glofish itu? <b>apa berbeda?</b>,
+                        dan aing baru sadar nama pelet/makanan cupray itu nama lu TIARA WKWKWKWKWK,
+                        <b>apa ada kata sebelumnya?</b>
+                    </p>
+                </div>
+            </div>
+            <button class="flip-button next" onclick="flipBook(true)"><i class="fas fa-arrow-right"></i></button>
+            <button class="flip-button prev" onclick="flipBook(false)"><i class="fas fa-arrow-left"></i></button>
+        </div>
+    </div>
+    <script>
+        let currentPage = 0;
+        const pages = document.querySelectorAll('.page');
+        const totalPages = pages.length;
+
+        function flipBook(next) {
+            if (next && currentPage < totalPages - 1) {
+                pages[currentPage].style.transform = "rotateY(-180deg)";
+                currentPage++;
+            } else if (!next && currentPage > 0) {
+                currentPage--;
+                pages[currentPage].style.transform = "rotateY(0deg)";
+            }
+        }
+    </script>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#typing', {
+            strings: ['Selamat ulang tahun yaa araayy, god bless you🎉',
+                'semoga yang di semogakan tersemoga ya rayy, Aamiin',
+                'ada ranting ada kayu...',
+                'Dirgahayu',
+                '😁🎉🎈🧨🎂🙌🙏'
+            ],
+            typeSpeed: 80,
+            backSpeed: 20,
+            loop: true,
+            showCursor: false
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            gsap.from(".container, .balloons, .book-container", {
+                opacity: 0,
+                y: 50,
+                duration: 2
+            });
+        });
+    </script>
+
+    <script>
+        function createBalloon() {
+            const balloonContainer = document.querySelector('.balloon-container');
+            const balloon = document.createElement('div');
+            balloon.classList.add('animated-balloon');
+
+            // Pilih warna acak
+            const colors = ["red", "blue", "yellow", "green", "purple", "orange", "pink", "cyan", "brown",
+                "gray", "magenta", "silver", "gold", "fuschia"
+            ];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            balloon.style.backgroundColor = randomColor;
+
+            // Atur posisi lebih sering di kiri (10-30%) atau kanan (70-90%)
+            let randomLeft;
+            if (Math.random() < 0.7) { // 70% kemungkinan muncul di kiri atau kanan
+                randomLeft = Math.random() < 0.5 ? Math.random() * 20 + 10 : Math.random() * 20 +
+                70; // Kiri (10-30%) atau Kanan (70-90%)
+            } else {
+                randomLeft = Math.random() * 40 + 20; // Tengah (30-70%) lebih jarang
+            }
+            balloon.style.left = `${randomLeft}%`;
+
+            balloonContainer.appendChild(balloon);
+
+            // Tambahkan efek ledakan setelah balon mencapai tengah
+            setTimeout(() => {
+                const explosion = document.createElement("div");
+                explosion.classList.add("explode");
+                explosion.style.background = `radial-gradient(circle, ${randomColor} 20%, transparent 80%)`;
+                explosion.style.left = balloon.style.left;
+                explosion.style.top = "50%";
+                balloonContainer.appendChild(explosion);
+
+                balloon.remove(); // Hapus balon setelah ledakan
+
+                setTimeout(() => {
+                    explosion.remove(); // Hapus efek ledakan setelah selesai
+                }, 500);
+            }, 3000);
+        }
+
+        // Jalankan balon setiap 1 detik
+        setInterval(createBalloon, 800);
+    </script>
+</body>
+
+
+</html>
