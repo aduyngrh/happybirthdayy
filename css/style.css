@@ -292,6 +292,10 @@ i:hover {
     font-family: "Inconsolata", serif;
 }
 
+.ending {
+    font-size: 20px;
+}
+
 .book .pages .page {
     transform-origin: left;
     transition: transform 2s;
@@ -321,6 +325,67 @@ i:hover {
 .next {
     right: -60px;
 }
+
+/* end css page 2 */
+
+
+/* css page 3 */
+
+.photos-container {
+    margin: 0;
+    padding: 2rem;
+    font-family: sans-serif;
+    background-image: url('/assets/18537.jpg');
+    background-size: cover;
+    background-position: center;
+
+}
+
+.photos-frame {
+    background-color: white;
+    padding: 2.5em; /* sedikit lebih besar */
+    max-width: 1000px; /* dari 800px → 1000px */
+    margin: auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* lebih besar tiap kolom */
+    gap: 1.2rem;
+}
+
+.photo {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1; /* tetap square agar responsif */
+    perspective: 1000px;
+}
+
+.photo img {
+    cursor: pointer;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.photo img:hover {
+    transform: scale(1.1) rotateY(10deg) rotateX(5deg);
+    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(255, 255, 255, 0.2);
+    /* soft glow */
+    z-index: 10;
+
+}
+
+/* end css page 3 */
 
 
 

@@ -36,22 +36,22 @@
         <div class="balloon-container"></div>
         <div class="book" id="book">
             <div class="pages">
-                <div class="page" style="z-index: 6;">
+                <div class="page" style="z-index: 7;">
                     <div class="border">BOOK HISTORY CERITANYA</div>
                 </div>
-                <div class="page border" style="z-index: 5;">
+                <div class="page border" style="z-index: 6;">
                     <img src="assets/cupray.jpg" alt="Image 1">
                     <p>Ini cupray bersejarah namun kabar terakhir yang saya dengar ini
                         sudah di kebumikan, Dan yapp... apakah cupray yang tersisa masih hidup saya sangat penasaran
                     </p>
                 </div>
-                <div class="page" style="z-index: 4;">
+                <div class="page" style="z-index: 5;">
                     <img src="assets/glowfish.jpg" alt="Image 2">
                     <p>nah kalo ini kayanya kalo ga salah di beli bersamaan dengan cupray bersejarah
                         Dan yapp... nasibnya sama seperti tragedi sebelumnya dan parahnya semua nasibnya sama😁
                     </p>
                 </div>
-                <div class="page" style="z-index: 3;">
+                <div class="page" style="z-index: 4;">
                     <img src="assets/otatray.jpg" alt="Image 2">
                     <p>info yang saya dapat untuk membuat tato tersebut sangat mahal karna bergambar jarjit
                         yang dimana dalam kartun upin dan ipin jarjit memiliki peran agak asik yang dimana dia sering
@@ -59,7 +59,7 @@
                         seperti ada ranting ada kayu...
                     </p>
                 </div>
-                <div class="page" style="z-index: 2;">
+                <div class="page" style="z-index: 3;">
                     <video width="350" height="320" controls>
                         <source src="assets/worii.mp4" type="video/mp4">
                     </video>
@@ -67,7 +67,7 @@
                         itu pasti sebelum/sesudah ngeriview gambar kanjeng ndoroyy worii.
                     </p>
                 </div>
-                <div class="page" style="z-index: 1;">
+                <div class="page" style="z-index: 2;">
                     <video width="350" height="320" controls>
                         <source src="assets/cuprat.v2.mp4" type="video/mp4">
                     </video>
@@ -78,9 +78,21 @@
                         <b>apa ada kata sebelumnya?</b>
                     </p>
                 </div>
+                <div class="page" style="z-index: 1;">
+                    <div class="border">END</div>
+                </div>
             </div>
             <button class="flip-button next" onclick="flipBook(true)"><i class="fas fa-arrow-right"></i></button>
             <button class="flip-button prev" onclick="flipBook(false)"><i class="fas fa-arrow-left"></i></button>
+        </div>
+    </div>
+    <div class="photos-container">
+        <div class="photos-frame">
+            <div class="photo"><img src="assets/aray.jpg" alt="photo array"></div>
+            <div class="photo"><img src="assets/aray.jpg" alt="photo array"></div>
+            <div class="photo"><img src="assets/aray.jpg" alt="photo array"></div>
+            <div class="photo"><img src="assets/aray.jpg" alt="photo array"></div>
+            <div class="photo"><img src="assets/aray.jpg" alt="photo array"></div>
         </div>
     </div>
     <script>
@@ -141,7 +153,7 @@
             let randomLeft;
             if (Math.random() < 0.7) { // 70% kemungkinan muncul di kiri atau kanan
                 randomLeft = Math.random() < 0.5 ? Math.random() * 20 + 10 : Math.random() * 20 +
-                70; // Kiri (10-30%) atau Kanan (70-90%)
+                    70; // Kiri (10-30%) atau Kanan (70-90%)
             } else {
                 randomLeft = Math.random() * 40 + 20; // Tengah (30-70%) lebih jarang
             }
